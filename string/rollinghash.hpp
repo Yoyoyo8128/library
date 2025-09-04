@@ -48,7 +48,7 @@ struct RollingHash {
 using RH = RollingHash< 1000000007 >;
 
 
-
+/*
 int main(){
      string s = "abracadabra";
     RH rh(s);
@@ -71,4 +71,5 @@ int main(){
     RH rh2(t);
     int lcp_len = rh.LCP(rh2, 0, s.size(), 0, t.size());
     cout << "LCP(s, t) length = " << lcp_len << endl;
-}
+    
+}*/
