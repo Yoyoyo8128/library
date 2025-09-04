@@ -7,6 +7,7 @@ using namespace std;
 using namespace atcoder;
 using ll = long long;
 using ld = long double;
+using i128 = __int128_t;
 using pii = pair<int, int>;
 using pli = pair<ll, int>;
 using pll = pair<ll, ll>;
@@ -31,8 +32,8 @@ const long double PI = 3.1415926535897932384626;
 #define fi first
 #define se second
 #define faster ios::sync_with_stdio(false);cin.tie(nullptr);
-const vector<int> dx = {0, 1, 0, -1};
-const vector<int> dy = {1, 0, -1, 0};
+const vector<int> dx = {0, 1, 0, -1, 1, -1, -1, 1};
+const vector<int> dy = {1, 0, -1, 0, 1, 1, -1, -1};
 using mint = modint998244353;
 using Mint = modint1000000007;
 using pint = modint;
@@ -79,9 +80,6 @@ using pint = modint;
 #define rounddiv(n, x) (ll)((double)(n) / (double)(x) + 0.5)
 #define fix(n)                \
     fixed << setprecision(n)
-#define ioinit                   \
-    ios::sync_with_stdio(false); \
-    std::cin.tie(nullptr)
 template <typename T>
 inline bool chmax(T &a, T b) { return ((a < b) ? (a = b, true) : (false)); }
 template <typename T>
@@ -316,6 +314,9 @@ void debug_out(Args... args) {
 }
 
 #pragma endregion Yoyoyo
+
+
+
 
 #define debug(...) do { \
     cerr << "[" << #__VA_ARGS__ << "]:"; \
