@@ -1,6 +1,9 @@
+#define _GLIBCXX_DEBUG
+
+
+
 #pragma region Yoyoyo
 
-#define _GLIBCXX_DEBUG
 #include <bits/stdc++.h>
 using namespace std;
 #include <atcoder/all>
@@ -317,8 +320,13 @@ void debug_out(Args... args) {
 
 
 
-
 #define debug(...) do { \
     cerr << "[" << #__VA_ARGS__ << "]:"; \
     debug_out(__VA_ARGS__); \
 } while(0)
+
+
+int main(){
+    faster;
+    
+}
