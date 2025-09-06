@@ -324,5 +324,5 @@ void debug_out(Args... args) {
 
 int main(){
     faster;
-    
+    gei
 }
