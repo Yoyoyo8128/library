@@ -1,21 +1,17 @@
-#define _GLIBCXX_DEBUG
-
-
-
 #pragma region Yoyoyo
+
+#ifdef LOCAL
+#define _GLIBCXX_DEBUG
+#endif
 
 #include <bits/stdc++.h>
 using namespace std;
-#include <atcoder/all>
-using namespace atcoder;
 using ll = long long;
 using ld = long double;
 using i128 = __int128_t;
 using pii = pair<int, int>;
 using pli = pair<ll, int>;
 using pll = pair<ll, ll>;
-typedef vector<ll> vi;
-typedef vector<vi> vvi;
 const string Yes = "Yes";
 const string No = "No";
 const string YES = "YES";
@@ -37,9 +33,14 @@ const long double PI = 3.1415926535897932384626;
 #define faster ios::sync_with_stdio(false);cin.tie(nullptr);
 const vector<int> dx = {0, 1, 0, -1, 1, -1, -1, 1};
 const vector<int> dy = {1, 0, -1, 0, 1, 1, -1, -1};
+
+#if __has_include(<atcoder/all>)
+#include <atcoder/all>
+using namespace atcoder;
 using mint = modint998244353;
 using Mint = modint1000000007;
 using pint = modint;
+#endif
 
 
 #define YESNO(T)               \
@@ -69,20 +70,9 @@ using pint = modint;
     {                          \
         cout << "No" << endl;  \
     }
-#define inV(vec)                        \
-    for (ll i = 0; i < vec.size(); i++) \
-        cin >> vec[i];
-#define outV(vec)                       \
-    for (ll i = 0; i < vec.size(); i++) \
-    {                                   \
-        cout << vec[i] << " ";          \
-    }                                   \
-    cout << endl;
+
 #define print(s) cout << s << endl;
-#define updiv(n, x) (n + x - 1) / x
-#define rounddiv(n, x) (ll)((double)(n) / (double)(x) + 0.5)
-#define fix(n)                \
-    fixed << setprecision(n)
+
 template <typename T>
 inline bool chmax(T &a, T b) { return ((a < b) ? (a = b, true) : (false)); }
 template <typename T>
@@ -309,21 +299,26 @@ ostream &operator<<(ostream &a, Mint &b)
 }
 #endif
 
+#ifdef LOCAL
 template<class... Args>
 void debug_out(Args... args) {
     int _i = 0;
-    ((cerr << ( _i++ ? ", " : " ") << args), ...);
+    ((cerr << (_i++ ? ", " : " ") << args), ...);
     cerr << "\n";
 }
+#define debug(...) do { \
+    cerr << "[" << #__VA_ARGS__ << "]:"; \
+    debug_out(__VA_ARGS__); \
+} while(0)
+#else
+#define debug(...)
+#endif
 
 #pragma endregion Yoyoyo
 
 
 
-#define debug(...) do { \
-    cerr << "[" << #__VA_ARGS__ << "]:"; \
-    debug_out(__VA_ARGS__); \
-} while(0)
+
 
 
 
