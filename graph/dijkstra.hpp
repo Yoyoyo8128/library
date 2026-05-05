@@ -1,5 +1,4 @@
-struct Edge
-{
+struct Edge{
     int to;
     long long cost;
 };
