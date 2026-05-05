@@ -1,5 +1,9 @@
 #pragma region Yoyoyo
 
+#pragma GCC target("avx2")
+#pragma GCC optimize("O3")
+#pragma GCC optimize("unroll-loops")
+
 #ifdef LOCAL
 #define _GLIBCXX_DEBUG
 #endif
@@ -21,9 +25,6 @@ const ll MOD = 1000000007;
 const ll mod = 998244353;
 const long long inf = 1ll << 60;
 const long double PI = 3.1415926535897932384626;
-#pragma GCC target("avx2")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
 #define pb push_back
 #define eb emplace_back
 #define mp make_pair
@@ -71,7 +72,7 @@ using pint = modint;
         cout << "No" << endl;  \
     }
 
-#define print(s) cout << s << endl;
+#define print(s) cout << s << "\n";
 
 template <typename T>
 inline bool chmax(T &a, T b) { return ((a < b) ? (a = b, true) : (false)); }
