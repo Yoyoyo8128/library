@@ -116,7 +116,7 @@ std::vector<int> sa_is(const std::vector<int>& s, int upper) {
     }
 
     induce(lms);
-
+    
     if (m) {
         std::vector<int> sorted_lms;
         sorted_lms.reserve(m);
