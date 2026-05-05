@@ -2,7 +2,7 @@ struct RollingHash {
     using ull = unsigned long long;
     static const ull mod = (1ULL << 61) - 1;
 
-    static const ull base = 20090926;//My Birthday.
+    static const ull base = 20090926; //My Birthday.
 
     vector<ull> power;
     vector<ull> hash;
@@ -52,7 +52,7 @@ struct RollingHash {
         int n = hash.size() - 1;
         int low = 0;
         int high = min(n - i, n - j) + 1;
-    
+
         while (high - low > 1) {
             int mid = (low + high) / 2;
             if (get(i, i + mid) == get(j, j + mid)) {
