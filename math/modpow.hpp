@@ -1,71 +1,43 @@
-// 繰り返し二乗法
-ll modpow(ll a, ll n, ll mod)
-{
-    if (a == 0)
-    {
+
+ll modpow(ll a,ll n,ll mod){
+    if(a==0){
         return 0;
     }
-    ll res = 1;
-    while (n > 0)
-    {
-        if (n & 1)
-            res = res * a % mod;
-        a = a * a % mod;
-        n >>= 1;
+    ll res=1;
+    while (n>0){
+        if (n&1)res=res*a%mod;
+        a=a*a%mod;
+        n>>=1;
     }
+    while(res<0)res+=mod;
     return res;
 }
 
-// 割り算
-ll Div(ll a, ll b, ll m)
-{
-    return (a * modpow(b, m - 2, m)) % m;
+ll Div(ll a,ll b,ll m){
+    ll res=(a*modpow(b,m-2,m))%m;
+    while(res<0)res+=m;
+    return res;
 }
 
-// 階乗
-vector<ll> fact(1);
-void fac(ll N, ll m)
-{
-    fact[0] = 1;
-    for (int i = 1; i <= N; i++)
-    {
-        ll ppp = i;
-        while (ppp % m == 0)
-        {
-            ppp /= m;
+struct Comb{
+    int _n;
+    ll mod;
+    vector<ll> fact, inv, finv;
+
+    Comb(int n, ll mod) : _n(n), mod(mod), fact(n+1), inv(n+1), finv(n+1) {
+        fact[0] = fact[1] = 1;
+        inv[1] = 1;
+        finv[0] = finv[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            fact[i] = fact[i-1] * i % mod;
+            inv[i] = mod - mod / i * inv[mod % i] % mod; // ←ここ重要
+            finv[i] = finv[i-1] * inv[i] % mod;
         }
-        fact.pb(fact[i - 1] * (ppp));
-        fact[i] %= m;
-    }
-}
-
-ll v(ll n, ll p)
-{
-    ll aaans = 0;
-    ll nppp = n;
-    while (nppp > 0)
-    {
-        aaans += nppp / p;
-        nppp /= p;
-    }
-    return aaans;
-}
-// 組み合わせ
-ll comb(ll n, ll r, ll m)
-{
-    if (n < r)
-    {
-        return 0;
     }
 
-    if (r < 0)
-    {
-        return 0;
+    ll comb(int n, int r) {
+        if (n < r || r < 0) return 0;
+        assert(n<=_n);
+        return fact[n] * finv[r] % mod * finv[n-r] % mod;
     }
-
-    if (n < 0)
-    {
-        return 0;
-    }
-    return Div(fact[n], fact[r] * fact[n - r] % m, m);
-}
+};
