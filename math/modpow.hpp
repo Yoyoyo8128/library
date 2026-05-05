@@ -30,7 +30,7 @@ struct Comb{
         finv[0] = finv[1] = 1;
         for (int i = 2; i <= n; i++) {
             fact[i] = fact[i-1] * i % mod;
-            inv[i] = mod - mod / i * inv[mod % i] % mod; // ←ここ重要
+            inv[i] = mod - mod / i * inv[mod % i] % mod;
             finv[i] = finv[i-1] * inv[i] % mod;
         }
     }
