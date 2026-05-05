@@ -1,14 +1,14 @@
 // ダイクストラ
 struct Edge
 {
-    long long to;
+    int to;
     long long cost;
 };
 void dijkstra(const vector<vector<Edge>> &G, int s, vector<long long> &dis)
 {
     int N = G.size();
     dis.resize(N, inf);
-    priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq; // 「仮の最短距離, 頂点」が小さい順に並ぶ
+    priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;
     dis[s] = 0;
     pq.emplace(dis[s], s);
     while (!pq.empty())
@@ -17,17 +17,16 @@ void dijkstra(const vector<vector<Edge>> &G, int s, vector<long long> &dis)
         pq.pop();
         int v = p.second;
         if (dis[v] < p.first)
-        { // 最短距離で無ければ無視
+        { 
             continue;
         }
         for (auto &e : G[v])
         {
             if (dis[e.to] > dis[v] + e.cost)
-            { // 最短距離候補なら priority_queue に追加
+            {
                 dis[e.to] = dis[v] + e.cost;
                 pq.emplace(dis[e.to], e.to);
             }
         }
     }
 }
-// https://algo-logic.info/dijkstra/
