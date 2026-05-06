@@ -1,14 +1,15 @@
 #pragma region Yoyoyo
 
-#pragma GCC target("avx2")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #ifdef LOCAL
 #define _GLIBCXX_DEBUG
 #endif
 
 #include<bits/stdc++.h>
+#ifndef LOCAL
+#pragma GCC target("avx2")
+#pragma GCC optimize("O3")
+#pragma GCC optimize("unroll-loops")
+#endif
 using namespace std;
 using ll=long long;
 using ld=long double;
