@@ -1,16 +1,17 @@
 #pragma region Yoyoyo
 
+#ifdef LOCAL
+#define _GLIBCXX_DEBUG
+#endif
+
+#include <bits/stdc++.h>
+
 #ifndef LOCAL
 #pragma GCC target("avx2")
 #pragma GCC optimize("O3")
 #pragma GCC optimize("unroll-loops")
 #endif
 
-#ifdef LOCAL
-#define _GLIBCXX_DEBUG
-#endif
-
-#include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
 using ld = long double;
@@ -246,4 +247,3 @@ void debug_out(Args... args){
 #endif
 
 #pragma endregion Yoyoyo
-
