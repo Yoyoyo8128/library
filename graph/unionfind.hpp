@@ -1,17 +1,17 @@
 struct UnionFind{
     private:
     int n;
-    vector<int>par,siz;
+    vector<int>data;
     
     public:
-    UnionFind(int _n):par(_n,-1),siz(_n,1),n(_n){}
+    UnionFind(int _n):data(_n,-1),n(_n){}
 
     int root(int x){
         assert(0<=x && x<n);
-        if(par[x]==-1){
+        if(data[x]<0){
             return x;
         }else{
-            return par[x]=root(par[x]);
+            return data[x]=root(data[x]);
         }
     }
 
@@ -24,13 +24,13 @@ struct UnionFind{
         assert(0<=x && x<n && 0<=y && y<n);
         int rx=root(x),ry=root(y);
         if(rx==ry)return;
-        if(siz[rx]>siz[ry])swap(rx,ry);
-        par[rx]=ry;
-        siz[ry]+=siz[rx];
+        if(data[rx]<data[ry])swap(rx,ry);
+        data[ry]+=data[rx];
+        data[rx]=ry;
     }
 
     int size(int x){
         assert(0<=x && x<n);
-        return siz[root(x)];
+        return -data[root(x)];
     }
 };
