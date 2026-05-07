@@ -29,8 +29,8 @@ struct HLD{
     HLD(int _n):n(_n),par(n,-1),sz(n,1),head(n,0),vid(n,-1),G(n){}
 
     void add_edge(int u,int v){
-        G[u].emplace_back(v);
-        G[v].emplace_back(u);
+        G[u].eb(v);
+        G[v].eb(u);
     }
 
     void build(){
