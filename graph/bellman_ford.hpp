@@ -3,7 +3,7 @@ struct Edge{
     long long cost;
 };
 
-pair<bool,vector<ll>> bellman(const vector<vector<Edge>>&G,int s){
+pair<bool,vector<ll>> bellman_ford(const vector<vector<Edge>>&G,int s){
     int N = G.size();
     vector<ll> dis(N, inf);
     dis[s] = 0;
