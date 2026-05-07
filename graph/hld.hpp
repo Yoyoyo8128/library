@@ -28,7 +28,10 @@ struct HLD{
     public:
     HLD(int _n):n(_n),par(n,-1),sz(n,1),head(n,0),vid(n,-1),G(n){}
 
-    void add_edge(int u,int v){G[u].emplace_back(v);}
+    void add_edge(int u,int v){
+        G[u].emplace_back(v);
+        G[v].emplace_back(u);
+    }
 
     void build(){
         dfs1(0,-1);
