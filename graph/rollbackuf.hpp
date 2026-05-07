@@ -39,9 +39,9 @@ struct RollbackUnionFind{
     }
 
     void undo(){
-        data[his.top().first]=his.top().second;
+        data[his.top().fi]=his.top().se;
         his.pop();
-        data[his.top().first]=his.top().second;
+        data[his.top().fi]=his.top().se;
         his.pop();
     }
 
