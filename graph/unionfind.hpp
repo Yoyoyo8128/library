@@ -20,13 +20,14 @@ struct UnionFind{
         return root(x)==root(y);
     }
 
-    void unite(int x,int y){
+    bool unite(int x,int y){
         assert(0<=x && x<n && 0<=y && y<n);
         int rx=root(x),ry=root(y);
-        if(rx==ry)return;
+        if(rx==ry)return false;
         if(data[rx]<data[ry])swap(rx,ry);
         data[ry]+=data[rx];
         data[rx]=ry;
+        return true;
     }
 
     int size(int x){
