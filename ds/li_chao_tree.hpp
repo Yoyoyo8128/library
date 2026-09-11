@@ -52,3 +52,17 @@ struct LCT{
         return ans;
     }
 };
+
+/*
+    LCT<ll> lct(X,inf);
+    for(int i=0;i<N;i++){
+        lct.update(A[i],B[i]);
+    }
+    for(int i=0;i<Q;i++){
+        if(!q[i].fi){
+            lct.update(q[i].se.fi,q[i].se.se);
+        }else{
+            cout<<lct.query((lower_bound(all(X),q[i].se.fi)-X.begin()))<<"\n";
+        }
+    }
+*/
