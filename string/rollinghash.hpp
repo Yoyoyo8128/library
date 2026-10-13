@@ -1,3 +1,7 @@
+//https://github.com/Yoyoyo8128/library/blob/main/string/rollinghash.hpp
+
+//乱数を使ってないので撃墜可能だが、比較ができていいね、CFなどでは悔い改めてもろて
+
 struct RollingHash {
     using ull = unsigned long long;
     static const ull mod = (1ULL << 61) - 1;
