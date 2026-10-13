@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/graph/dijkstra.hpp
+
 struct Edge{
     int to;
     long long cost;

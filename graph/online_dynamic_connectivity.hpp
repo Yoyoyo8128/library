@@ -1,3 +1,5 @@
+//https://qiita.com/hotman78/items/78cd3aa50b05a57738d4
+
 template<typename T>
 class dynamic_connectivity{
 	class euler_tour_tree{

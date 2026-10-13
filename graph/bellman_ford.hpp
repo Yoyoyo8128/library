@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/graph/bellman_ford.hpp
+
 struct Edge{
     int to;
     long long cost;
