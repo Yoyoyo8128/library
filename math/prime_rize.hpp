@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/math/prime_rize.hpp
+
 vector<pair<long long, long long> > prime_factorize(long long N) {
     vector<pair<long long, long long> > res;
     for (long long p = 2; p * p <= N; ++p) {

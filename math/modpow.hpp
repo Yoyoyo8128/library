@@ -1,3 +1,4 @@
+//https://github.com/Yoyoyo8128/library/blob/main/math/modpow.hpp
 
 ll modpow(ll a,ll n,ll mod){
     if(a==0){

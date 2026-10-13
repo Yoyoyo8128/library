@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/graph/unionfind.hpp
+
 struct UnionFind{
     private:
     int n;

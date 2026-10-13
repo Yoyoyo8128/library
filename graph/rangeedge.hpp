@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/graph/rangeedge.hpp
+
 template<typename W>
 struct range_edge_graph {
     int n;

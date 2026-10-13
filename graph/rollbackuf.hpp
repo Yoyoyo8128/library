@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/graph/rollbackuf.hpp
+
 struct RollbackUnionFind{
     private:
     int n;
