@@ -1,3 +1,5 @@
+//https://nyaannyaan.github.io/library/data-structure-2d/wavelet-matrix.hpp.html
+
 #pragma once
 
 #include <immintrin.h>

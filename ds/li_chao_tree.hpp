@@ -1,3 +1,6 @@
+//https://ei1333.github.io/luzhiled/snippets/structure/li-chao-tree.html
+//JOI空書き用
+
 template<typename T>
 struct LCT{
     struct Line{

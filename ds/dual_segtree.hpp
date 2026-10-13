@@ -1,3 +1,5 @@
+//https://github.com/Yoyoyo8128/library/blob/main/ds/dual_segtree.hpp
+
 template<class S,S(*composition)(S,S),S(*id)()>
 struct dual_segtree{
     private:

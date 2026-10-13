@@ -1,3 +1,5 @@
+//ACL mintとかにも対応 空書き用
+
 template<typename T>
 struct BIT{
     private:
